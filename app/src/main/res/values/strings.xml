@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ViewTestsForFun</string>
+    <string name="activity_transition">activity_transition</string>
 </resources>
