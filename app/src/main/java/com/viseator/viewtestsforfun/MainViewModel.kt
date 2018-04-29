@@ -1,5 +1,7 @@
 package com.viseator.viewtestsforfun
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 /**
@@ -8,6 +10,6 @@ import android.arch.lifecycle.ViewModel
  * wudi.viseator@bytedance.com
  */
 
-class MainViewModel(val numData: NumData) : ViewModel() {
-    lateinit var someClass: SomeClass
+class MainViewModel(val numData: MutableLiveData<NumData>) : ViewModel() {
+    lateinit var someClass: MutableLiveData<SomeClass>
 }

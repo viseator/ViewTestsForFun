@@ -1,5 +1,7 @@
 package com.viseator.viewtestsforfun
 
+import android.util.Log
+
 /**
  * Created by wudi.viseator on 2018/4/29.
  * Wu Di
@@ -8,5 +10,6 @@ package com.viseator.viewtestsforfun
 
 class SomeClass {
     fun doSomething() {
+        Log.d("vir", "called")
     }
 }
