@@ -14,9 +14,9 @@ import kotlinx.android.synthetic.main.main_list_content.view.*
  * Wu Di
  * wudi.viseator@bytedance.com
  */
-class MainListAdapter(private val activity: AppCompatActivity) :
+class MainListAdapter :
         RecyclerView.Adapter<MainListAdapter.ViewHolder>() {
-    internal var items = listOf<String>()
+    var items: List<String>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,21 +24,10 @@ class MainListAdapter(private val activity: AppCompatActivity) :
                         false))
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = items!!.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemView.main_text.text = items[position]
-        when (position) {
-            0 -> {
-                holder.itemView.setOnClickListener {
-                    val intent = Intent(activity, SharedElementTestActivity::class.java)
-                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
-                            holder.itemView.main_avatar,
-                            activity.resources.getString(R.string.activity_transition))
-                    activity.startActivity(intent, options.toBundle())
-                }
-            }
-        }
+        holder.itemView.main_text.text = items!![position]
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
